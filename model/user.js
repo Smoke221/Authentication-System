@@ -13,6 +13,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  provider: {
+    type: String,
+    enum: ["self", "github", "google"],
+    default: "self",
+  },
 });
 
 const userModel = mongoose.model("user", userSchema);
