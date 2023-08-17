@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
   },
   provider: {
     type: String,
-    enum: ["self", "github", "google"],
+    enum: ["self", "github", "google", "facebook"],
     default: "self",
   },
 });
