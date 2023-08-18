@@ -19,6 +19,15 @@ app.use("/user", userRouter);
 app.use("/auth/github", gitRouter);
 app.use("/auth/google", googleRouter)
 
+app.use(authenticate)
+
+app.get("/authorized", (req, res) => {
+  res.send(
+    `<h1>Congratulations! 🎉</h1><p>You've entered our secure zone. Enjoy your experience!</p>`
+  );
+});
+
+
 app.listen(process.env.PORT, async () => {
   try {
     await connection;

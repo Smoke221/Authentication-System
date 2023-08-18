@@ -68,10 +68,7 @@ signupForm.addEventListener("submit", async (event) => {
       signupForm.appendChild(successContainer);
 
       // Remove the success message after 2 seconds (2000 milliseconds)
-      removeMessageAfterDelay(successContainer, 2000);
-    } else {
-      // Redirect to the homepage
-      window.location.href = "/";
+      removeMessageAfterDelay(successContainer, 3000);
     }
   } else {
     // Check if the error message indicates existing email
@@ -125,7 +122,7 @@ loginForm.addEventListener("submit", async (event) => {
 
   if (response.ok) {
     localStorage.setItem("authToken", data.token);
-    window.location.href = "http://localhost:8000/";
+    window.location.href = "dashboard.html";
   } else {
     if (
       data.message === "Wrong password" ||

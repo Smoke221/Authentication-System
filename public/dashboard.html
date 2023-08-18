@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10%;
+    }
+    .protected-message {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+    p {
+      font-size: 16px;
+      color: #777777;
+    }
+  </style>
+  <body>
+    <div id="protected-message"></div>
+  </body>
+</html>
+<script>
+  const token = localStorage.getItem("authToken");
+  const headers = {
+    Authorization: token,
+    "Content-Type": "application/json",
+  };
+
+  // Fetch the protected route
+  fetch("http://localhost:8000/authorized", { headers })
+    .then((response) => response.text())
+    .then((message) => {
+      // Display the appreciative message in a designated element
+      const messageContainer = document.getElementById("protected-message");
+      messageContainer.innerHTML = message;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+</script>
