@@ -41,7 +41,7 @@
 }
 
 /* Styling for the Facebook button */
-#facebook-login-button {
+/* #facebook-login-button {
   background-color: #3b5998;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out,
     box-shadow 0.3s ease-in-out;
@@ -51,4 +51,4 @@
   background-color: #4a68ad;
   transform: scale(1.05);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
+} */

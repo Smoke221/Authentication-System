@@ -3,7 +3,6 @@ const { connection } = require("./configs/db");
 const { userRouter } = require("./routes/user");
 const { gitRouter } = require("./routes/github-auth");
 const { googleRouter } = require("./routes/google-auth");
-const { facebookRouter } = require("./routes/facebook-auth");
 const { authenticate } = require("./middlewares/authenticate");
 const cors = require("cors");
 require("dotenv").config();
@@ -19,7 +18,6 @@ app.get("/", (req, res) => {
 app.use("/user", userRouter);
 app.use("/auth/github", gitRouter);
 app.use("/auth/google", googleRouter)
-app.use("/auth/facebook", facebookRouter)
 
 app.listen(process.env.PORT, async () => {
   try {
