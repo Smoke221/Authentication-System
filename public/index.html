@@ -11,15 +11,45 @@
     />
   </head>
   <body>
-    <button id="github-login-button" class="auth-button">
-      <i class="fab fa-github"></i> Login with GitHub
-    </button>
-    <button id="google-login-button" class="auth-button">
-      <i class="fab fa-google"></i> Login with Google
-    </button>
-    <!-- <button id="facebook-login-button" class="auth-button">
-    <i class="fab fa-facebook"></i> Login with Facebook
-  </button> -->
+    <div class="container">
+      <div class="form">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <input type="text" placeholder="Name" name="signup-name" required />
+          <input type="text" placeholder="Email" name="signup-email" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="signup-password"
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+      <div class="form">
+        <h2>Login</h2>
+        <form id="login-form">
+          <input type="text" placeholder="Email" name="login-email" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="login-password"
+            required
+          />
+          <button type="submit">Login</button>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </form>
+      </div>
+    </div>
+    <div class="auth-options">
+      <button id="github-login-button">
+        <i class="fab fa-github"></i> Login with GitHub
+      </button>
+      <button id="google-login-button">
+        <i class="fab fa-google"></i> Login with Google
+      </button>
+    </div>
+    <div class="bt-spinner" style="visibility: hidden;"></div>
   </body>
 </html>
 <script src="./index.js"></script>
